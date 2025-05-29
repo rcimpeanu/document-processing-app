@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/document-service/document-processing-app.modules.document-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/document-service/document-processing-app.modules.document-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/notification-service/document-processing-app.modules.notification-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/notification-service/document-processing-app.modules.notification-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/processing-service/document-processing-app.modules.processing-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/processing-service/document-processing-app.modules.processing-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/shared-kernel/document-processing-app.modules.shared-kernel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/shared-kernel/document-processing-app.modules.shared-kernel.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/validation-service/document-processing-app.modules.validation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/validation-service/document-processing-app.modules.validation-service.main.iml" />
+    </modules>
+  </component>
+</project>

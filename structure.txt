@@ -1,0 +1,17 @@
+.
+├── build.gradle
+├── docker-compose.yml
+├── gradle
+│   └── wrapper
+├── gradlew
+├── gradlew.bat
+├── modules
+│   ├── document-service
+│   ├── notification-service
+│   ├── processing-service
+│   ├── shared-kernel
+│   └── validation-service
+├── settings.gradle
+└── structure.txt
+
+9 directories, 6 files

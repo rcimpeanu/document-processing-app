@@ -1,0 +1,4 @@
+rootProject.name = 'document-service'
+
+include 'modules:document-service', 'modules:notification-service'
+
