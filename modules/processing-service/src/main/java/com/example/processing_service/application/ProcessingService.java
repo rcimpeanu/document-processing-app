@@ -1,4 +1,4 @@
-package com.example.processing_service;
+package com.example.processing_service.application;
 
 import com.example.sharedkernel.event.DocumentProcessedEvent;
 import org.springframework.context.ApplicationEventPublisher;

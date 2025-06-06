@@ -1,4 +1,4 @@
-package com.example.validation_service.configuration;
+package com.example.validation_service.infrastructure.config;
 
 import com.example.sharedkernel.event.DocumentValidatedEvent;
 import jakarta.annotation.PostConstruct;

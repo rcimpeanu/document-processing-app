@@ -1,15 +1,13 @@
-package com.example.notification_service;
+package com.example.notification_service.application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NotificationService {
-    private static final Logger logger = LoggerFactory.getLogger(NotificationService.class);
+public class NotificationHandler {
+    private static final Logger logger = LoggerFactory.getLogger(NotificationHandler.class);
 
-    @Async
     public void sendNotification(String documentId) {
         logger.info("Sending notification for document: {}", documentId);
         try {

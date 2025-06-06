@@ -1,7 +1,9 @@
-package com.example.validation_service.listener;
+package com.example.validation_service.interfaces.messaging;
 
 import com.example.sharedkernel.event.DocumentProcessedEvent;
-import com.example.validation_service.ValidationService;
+import com.example.sharedkernel.event.DocumentValidatedEvent;
+import com.example.validation_service.application.ValidationService;
+import com.example.validation_service.application.ValidationEventPublisher;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -20,6 +22,8 @@ public class DocumentValidationListener {
 
     private final ValidationService validationService;
 
+    private final ValidationEventPublisher validationEventPublisher;
+
     @PostConstruct
     public void init() {
         logger.info("DocumentValidationListener initialized");
@@ -29,7 +33,7 @@ public class DocumentValidationListener {
     @EventListener
     @Retryable(
             value = { RuntimeException.class },
-            maxAttempts = 2,
+            maxAttempts = 3,
             backoff = @Backoff(delay = 2000)
     )
     public void handle(DocumentProcessedEvent event) {
@@ -37,7 +41,11 @@ public class DocumentValidationListener {
 
         try {
             Thread.sleep(3000); // simulate delay
-            validationService.validateDocument(event.documentId());
+            String validationId = validationService.validateDocument(event.documentId());
+
+            validationEventPublisher.publish(
+                new DocumentValidatedEvent(event.documentId(), validationId)
+            );
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

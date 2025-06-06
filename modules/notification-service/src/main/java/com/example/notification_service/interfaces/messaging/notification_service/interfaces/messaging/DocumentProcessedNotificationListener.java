@@ -1,5 +1,6 @@
-package com.example.notification_service;
+package com.example.notification_service.interfaces.messaging.notification_service.interfaces.messaging;
 
+import com.example.notification_service.application.NotificationHandler;
 import com.example.sharedkernel.event.DocumentProcessedEvent;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -10,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class DocumentProcessedListener {
+public class DocumentProcessedNotificationListener {
 
-    private final NotificationService notificationService;
-    private static final Logger logger = LoggerFactory.getLogger(DocumentProcessedListener.class);
+    private final NotificationHandler notificationHandler;
+    private static final Logger logger = LoggerFactory.getLogger(DocumentProcessedNotificationListener.class);
 
     @Async
     @EventListener
@@ -22,7 +23,7 @@ public class DocumentProcessedListener {
 
         try {
             Thread.sleep(3000); // simulate delay
-            notificationService.sendNotification(event.documentId());
+            notificationHandler.sendNotification(event.documentId());
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

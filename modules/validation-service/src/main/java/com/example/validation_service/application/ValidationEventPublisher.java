@@ -1,4 +1,4 @@
-package com.example.validation_service.publisher;
+package com.example.validation_service.application;
 
 import com.example.sharedkernel.event.DocumentValidatedEvent;
 import lombok.RequiredArgsConstructor;
